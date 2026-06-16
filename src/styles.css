@@ -1,0 +1,784 @@
+:root {
+  color: #171717;
+  background: #efeee9;
+  font-family:
+    "Segoe UI", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(23, 23, 23, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 23, 23, 0.045) 1px, transparent 1px),
+    #efeee9;
+  background-size: 28px 28px;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.shellHeader {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(420px, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  min-height: 78px;
+  padding: 14px 26px;
+  color: #f7f4ea;
+  background: #121212;
+  border-bottom: 4px solid #ff7a1a;
+}
+
+.brand,
+.topbar,
+.paymentHeader,
+.buttonRow,
+.panelHeader,
+.routeMap,
+.routeHeader {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 12px;
+  min-width: 0;
+}
+
+.brand strong {
+  display: block;
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.brand span {
+  display: block;
+  color: #bdb9ad;
+  font-size: 13px;
+}
+
+.brandMark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: #101010;
+  background: #ff7a1a;
+  border: 2px solid #f7f4ea;
+  border-radius: 4px;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 10px;
+  color: #f7f4ea;
+  background: transparent;
+  border: 1px solid #44413b;
+  border-radius: 4px;
+}
+
+.nav button.active,
+.nav button:hover {
+  color: #101010;
+  background: #f7f4ea;
+  border-color: #f7f4ea;
+}
+
+.main {
+  width: min(1480px, 100%);
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.heroStrip {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 24px;
+  padding: 24px;
+  color: #f7f4ea;
+  background: #171717;
+  border: 1px solid #171717;
+  border-radius: 6px;
+  box-shadow: 8px 8px 0 #d7d1c2;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #ffb000;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 860px;
+  margin-bottom: 10px;
+  font-size: 34px;
+  line-height: 1.08;
+}
+
+h2 {
+  margin-bottom: 6px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.heroText {
+  max-width: 780px;
+  margin-bottom: 0;
+  color: #cac5b8;
+  line-height: 1.5;
+}
+
+.grantBadge {
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 18px;
+  background: #f7f4ea;
+  border: 2px solid #ff7a1a;
+  border-radius: 4px;
+  color: #171717;
+}
+
+.grantBadge span,
+.grantBadge small,
+.panel p,
+.paymentPanel p,
+.apiPanel p,
+.invoiceRow span,
+.metric span,
+.step span,
+.milestone p,
+.routeHeader span,
+.paymentAddress span,
+.payDetails span {
+  color: #6c675e;
+}
+
+.grantBadge strong {
+  font-size: 28px;
+}
+
+.dashboardGrid,
+.layout,
+.paymentLayout {
+  display: grid;
+  gap: 18px;
+}
+
+.dashboardGrid {
+  grid-template-columns: minmax(0, 1fr) 430px;
+  align-items: start;
+}
+
+.layout {
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.55fr);
+}
+
+.layout.single,
+.paymentLayout {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.55fr);
+}
+
+.commandStack,
+.rightRail {
+  display: grid;
+  gap: 18px;
+}
+
+.statsGrid,
+.milestoneGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric,
+.panel,
+.paymentPanel,
+.apiPanel,
+.milestone,
+.routePanel {
+  background: #fffdf8;
+  border: 1px solid #c9c3b7;
+  border-radius: 6px;
+}
+
+.metric {
+  position: relative;
+  min-height: 128px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.metric::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 46px;
+  height: 6px;
+  background: #2f5aff;
+}
+
+.metricIcon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: #101010;
+  background: #ffb000;
+  border: 1px solid #171717;
+  border-radius: 4px;
+}
+
+.metric span,
+.metric strong {
+  display: block;
+}
+
+.metric span {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.metric strong {
+  margin-top: 5px;
+  font-size: 26px;
+}
+
+.panel,
+.paymentPanel,
+.apiPanel,
+.routePanel {
+  padding: 20px;
+}
+
+.commandPanel {
+  border-top: 6px solid #2f5aff;
+}
+
+.panelHeader {
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.panelHeader p,
+.paymentPanel p,
+.apiPanel p,
+.milestone p {
+  margin-bottom: 0;
+}
+
+.sectionCode,
+code {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding: 0 8px;
+  color: #f7f4ea;
+  background: #171717;
+  border-radius: 3px;
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  color: #25231f;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+label.full {
+  grid-column: 1 / -1;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px;
+  color: #171717;
+  background: #f7f4ea;
+  border: 1px solid #9f988b;
+  border-radius: 4px;
+}
+
+input:focus,
+select:focus {
+  outline: 3px solid rgba(47, 90, 255, 0.2);
+  border-color: #2f5aff;
+}
+
+.primary,
+.secondary,
+.linkButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 15px;
+  font-weight: 900;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+
+.primary {
+  color: #ffffff;
+  background: #2f5aff;
+  border-color: #2141b8;
+}
+
+.primary:hover {
+  background: #2448d4;
+}
+
+.primary.compact {
+  min-width: 140px;
+}
+
+.secondary,
+.linkButton {
+  color: #171717;
+  background: #fffdf8;
+  border-color: #171717;
+}
+
+.wide {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.routePanel {
+  color: #fffdf8;
+  background: #23211e;
+  border-color: #23211e;
+}
+
+.routeHeader {
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.routeHeader span {
+  color: #ffb000;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.routeHeader strong {
+  text-align: right;
+  font-size: 13px;
+}
+
+.routeMap {
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.routeMap > div {
+  display: grid;
+  min-width: 92px;
+  min-height: 78px;
+  place-items: center;
+  gap: 8px;
+  color: #171717;
+  background: #ffb000;
+  border-radius: 4px;
+  font-weight: 900;
+}
+
+.routeMap > svg {
+  color: #f7f4ea;
+}
+
+.invoiceList,
+.timeline,
+.budgetList {
+  display: grid;
+  gap: 10px;
+}
+
+.invoiceRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  width: 100%;
+  min-height: 74px;
+  padding: 14px;
+  color: #171717;
+  background: #f7f4ea;
+  border: 1px solid #c9c3b7;
+  border-left: 5px solid transparent;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.invoiceRow.selected,
+.invoiceRow:hover {
+  border-left-color: #ff7a1a;
+  background: #fffdf8;
+}
+
+.invoiceRow strong,
+.invoiceRow span {
+  display: block;
+}
+
+.invoiceAmount {
+  display: grid;
+  justify-items: end;
+  gap: 7px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 900;
+  border-radius: 3px;
+  border: 1px solid currentColor;
+}
+
+.status.paid {
+  color: #0a7c66;
+  background: #e4f6ef;
+}
+
+.status.pending {
+  color: #9a4d00;
+  background: #fff0cf;
+}
+
+.status.expired {
+  color: #af2c1e;
+  background: #ffe2db;
+}
+
+.paymentPanel {
+  border-top: 6px solid #ff7a1a;
+}
+
+.paymentHeader {
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.paymentPanel h2 {
+  margin: 10px 0 6px;
+  font-size: 42px;
+}
+
+.qrBlock {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin: 24px 0;
+  padding: 16px;
+  background: #171717;
+  border-radius: 4px;
+}
+
+.qrGrid {
+  width: 160px;
+  aspect-ratio: 1;
+  background:
+    linear-gradient(90deg, #171717 12px, transparent 12px) 0 0 / 24px 24px,
+    linear-gradient(#171717 12px, transparent 12px) 0 0 / 24px 24px,
+    #fffdf8;
+  border: 10px solid #fffdf8;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px #ffb000;
+}
+
+.paymentAddress {
+  min-width: 0;
+}
+
+.paymentAddress span,
+.paymentAddress strong {
+  display: block;
+}
+
+.paymentAddress span {
+  color: #ffb000;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.paymentAddress strong {
+  margin-top: 8px;
+  color: #fffdf8;
+  overflow-wrap: anywhere;
+  font-size: 22px;
+}
+
+.payDetails {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 12px;
+  margin: 0 0 20px;
+  padding: 16px 0;
+  border-top: 1px solid #d7d1c2;
+  border-bottom: 1px solid #d7d1c2;
+}
+
+.payDetails strong {
+  overflow-wrap: anywhere;
+}
+
+.buttonRow {
+  gap: 10px;
+}
+
+.buttonRow > * {
+  flex: 1;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+  padding: 14px;
+  color: #6c675e;
+  background: #f7f4ea;
+  border: 1px solid #c9c3b7;
+  border-radius: 4px;
+}
+
+.step.done {
+  color: #171717;
+  border-color: #12aeb9;
+  background: #e8fbfd;
+}
+
+.step strong,
+.step span {
+  display: block;
+}
+
+.webhookTable {
+  display: grid;
+  gap: 8px;
+}
+
+.webhookRow {
+  display: grid;
+  grid-template-columns: 1fr 110px 90px 140px 90px;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 12px 14px;
+  background: #f7f4ea;
+  border: 1px solid #c9c3b7;
+  border-radius: 4px;
+}
+
+.webhookRow small {
+  color: #2f5aff;
+  font-weight: 900;
+}
+
+.apiPanel {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  border-top: 6px solid #171717;
+}
+
+pre {
+  overflow: auto;
+  margin: 0;
+  padding: 18px;
+  color: #f7f4ea;
+  background: #171717;
+  border: 1px solid #3a3630;
+  border-radius: 4px;
+  line-height: 1.6;
+}
+
+.milestoneGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.milestone {
+  position: relative;
+  min-height: 190px;
+  padding: 18px;
+  border-top: 5px solid #ff7a1a;
+}
+
+.milestone:nth-child(2) {
+  border-top-color: #2f5aff;
+}
+
+.milestone:nth-child(3) {
+  border-top-color: #12aeb9;
+}
+
+.milestone strong,
+.milestone span {
+  display: block;
+}
+
+.milestone span {
+  margin-top: 8px;
+  color: #2f5aff;
+  font-weight: 900;
+}
+
+.milestone svg {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  color: #8a8275;
+}
+
+.budgetLine {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid #d7d1c2;
+}
+
+.budgetLine:last-child {
+  border-bottom: 0;
+}
+
+@media (max-width: 1120px) {
+  .shellHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .primary.compact {
+    justify-self: stretch;
+  }
+
+  .heroStrip,
+  .dashboardGrid,
+  .layout,
+  .layout.single,
+  .paymentLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .main,
+  .shellHeader {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  .heroStrip {
+    padding: 18px;
+    box-shadow: 4px 4px 0 #d7d1c2;
+  }
+
+  .statsGrid,
+  .formGrid,
+  .milestoneGrid,
+  .qrBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .invoiceRow,
+  .webhookRow,
+  .payDetails {
+    grid-template-columns: 1fr;
+  }
+
+  .invoiceAmount {
+    justify-items: start;
+  }
+
+  .routeMap {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .routeMap > div {
+    width: 100%;
+  }
+
+  .routeMap > svg {
+    transform: rotate(90deg);
+    align-self: center;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+  }
+}
